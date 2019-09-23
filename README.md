@@ -5,7 +5,7 @@
 ### Author: Alex Spencer
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1)
 * [travis](http://xyz.com)
 
 ### Setup
