@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watchAll",
-    "lint": "eslint **/*.js"
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
