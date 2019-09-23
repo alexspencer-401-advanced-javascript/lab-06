@@ -6,7 +6,7 @@
 
 ### Links and Resources
 * [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1)
-* [travis](http://xyz.com)
+* [travis](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1/checks?check_run_id=233373148)
 
 ### Setup
 #### `.env` requirements
