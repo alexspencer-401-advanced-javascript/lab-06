@@ -22,3 +22,10 @@ Scripts:
   
 #### Tests
 All tests pass
+
+#### Screenshots From Postman
+- [app.get](./assets/app-get.png)
+- [app.delete](./assets/app-delete.png)
+- [app.get.by.id](./assets/app-get-by-id.png)
+- [app.post](./assets/app-post.png)
+- [app.put](./assets/app-put.png)
