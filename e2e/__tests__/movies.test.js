@@ -54,6 +54,39 @@ describe('movies api', () => {
         expect(body.length).toBe(4);
       });
   });
-  
-
+  it('gets a movie by id', () => {
+    return postMovie(movieExample)
+      .then(movie => {
+        return request
+          .get(`/api/movies/${movie._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body).toEqual(movie);
+          });
+      });
+  });
+  it('updates the movie by id', () => {
+    return postMovie(movieExample)
+      .then(movie => {
+        movie.yearReleased = 1993;
+        return request
+          .put(`/api/movies/${movie._id}`)
+          .send(movie)
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.yearReleased).toBe(1993);
+      });
+  });
+  it('deletes a movie by id', () => {
+    return postMovie(movieExample)
+      .then(movie => {
+        return request
+          .delete(`/api/movies/${movie._id}`)
+          .expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.name).toBe('Gladiator');
+      });
+  });
 });
