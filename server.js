@@ -1,53 +1,12 @@
-require ('dotenv').config();
-require('./lib/connect')();
-const express = require('express');
-const app = express();
-const Movie = require('./lib/models/movie');
+require('dotenv').config();
+require('./lib/connect')(process.env.MONGODB_URI);
 
-app.use(express.json());
+const app = require('./lib/app');
 
-app.get('/api/movies', (req, res, next) => {
-  Movie.find()
-    .then(movies => {
-      res.json(movies);
-    })
-    .catch(next);
+const { createServer } = require('http');
+const server = createServer(app);
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`listening on PORT ${PORT}`);
 });
-
-app.get('/api/movies/:id', (req, res, next) => {
-  Movie.findById(req.params.id)
-    .then(movie => {
-      res.json(movie);
-    })
-    .catch(next);
-});
-
-app.post('/api/movies', (req, res, next) => {
-  Movie.create(req.body)
-    .then(movie => {
-      res.json(movie);
-    })
-    .catch(next);
-});
-
-app.put('/api/movies/:id', (req, res, next) => {
-  Movie.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  )
-    .then(movie => {
-      res.json(movie);
-    })
-    .catch(next);
-});
-
-app.delete('/api/movies/:id', (req, res, next) => {
-  Movie.findByIdAndRemove(req.params.id)
-    .then(removed => {
-      res.json(removed);
-    })
-    .catch(next);
-});
-
-app.listen(3000, () => console.log('server running on 3000'));
