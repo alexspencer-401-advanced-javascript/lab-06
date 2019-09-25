@@ -85,8 +85,13 @@ describe('movies api', () => {
           .delete(`/api/movies/${movie._id}`)
           .expect(200);
       })
-      .then(({ body }) => {
-        expect(body.name).toBe('Gladiator');
+      .then(() => {
+        return request
+          .get(`/api/movies`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.length).toBe(0);
+          });
       });
   });
 });
