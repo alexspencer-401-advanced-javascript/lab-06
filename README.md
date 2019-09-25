@@ -1,12 +1,14 @@
-# LAB - 06
+# LAB 06 & LAB 08
 
-## Mongoose ORM
+## Mongoose ORM & Express
 
 ### Author: Alex Spencer
 
 ### Links and Resources
-* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1)
-* [travis](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1/checks?check_run_id=233373148)
+* [lab 06 PR](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1)
+* [travis lab 06](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/1/checks?check_run_id=233373148)
+* [lab 08 PR](https://github.com/alexspencer-401-advanced-javascript/lab-06/pull/2)
+* [travis lab 08](https://travis-ci.com/alexspencer-401-advanced-javascript/lab-06/builds/129189189)
 * [heroku](https://mongoose-lab-08.herokuapp.com/)
 
 ### Setup
@@ -16,10 +18,15 @@
 #### Running the app
 
 **Describe what npm scripts do**
-Scripts:
-- "start": "node server.js",
-- "test": "jest --verbose",
-- "test-watch": "jest --verbose --watchAll"
+* Scripts:
+  - "lint": "eslint .",
+  - "pretest": "npm run lint",
+  - "jest": "jest",
+  - "test": "npm run jest -- --coverage",
+  - "test:watch": "npm run jest -- --watchAll",
+  - "test:verbose": "npm run test -- --verbose",
+  - "start": "node server.js",
+  - "start:watch": "nodemon server.js"
   
 #### Tests
 All tests pass
